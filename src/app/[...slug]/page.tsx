@@ -18,10 +18,6 @@ export const generateStaticParams = async () => {
   return paths;
 };
 
-export const getProps: GetStaticProps = async ({ params }) => {
-  return {props: { params }}
-};
-
 export default function Page({ params }: any) {
   return <div>
       <p>Platform: {process.env.NEXT_PUBLIC_CF_PAGES === "1" ? 'Cloudflare Pages' : 'Vercel'}</p>
