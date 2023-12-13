@@ -23,12 +23,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log(params);
-
   return {props: { params }}
 };
 
 export default function Page() {
   const router = useRouter()
-  return <p>Post: {router.query.slug}</p>
+  return <p>Dynamic Route from [...slug]: {JSON.stringify(router.query.slug)}</p>
 }
