@@ -28,5 +28,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export default function Page() {
   const router = useRouter()
-  return <p>Dynamic Route from [...slug]: {JSON.stringify(router.query.slug)}</p>
+  return <div>
+      <p>Commit: {process.env.CF_PAGES_COMMIT_SHA}</p>
+      <p>Branch: {process.env.CF_PAGES_BRANCH}</p>
+      <p>Dynamic Route from [...slug]: {JSON.stringify(router.query.slug)}</p>
+    </div>
+    
 }
