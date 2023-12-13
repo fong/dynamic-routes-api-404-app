@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export default function Page() {
   const router = useRouter()
   return <div>
-      <p>Platform: {process.env.NEXT_PUBLIC_CF_PAGES === "1" && 'Cloudflare Pages'}{process.env.NEXT_PUBLIC_VERCEL === "1" && 'Vercel'}</p>
+      <p>Platform: {process.env.NEXT_PUBLIC_CF_PAGES === "1" ? 'Cloudflare Pages' : 'Vercel'}</p>
       <p>Commit: {process.env.NEXT_PUBLIC_CF_PAGES_COMMIT_SHA || process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA }</p>
       <p>Branch: {process.env.NEXT_PUBLIC_CF_PAGES_BRANCH || process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF}</p>
       <p>Dynamic Route from [...slug]: {JSON.stringify(router.query.slug)}</p>
